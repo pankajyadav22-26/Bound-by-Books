@@ -19,7 +19,7 @@ const OrderSuccess = () => {
 
       try {
         const res = await axios.post(
-          "http://localhost:1000/api/v1/place-order",
+          "https://bookstore-znt4.onrender.com/api/v1/place-order",
           { order: cart, paymentMode: "Paid" },
           { headers }
         );

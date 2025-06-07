@@ -18,7 +18,7 @@ const ViewBookDetails = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1000/api/v1/get-book-by-id/${id}`
+          `https://bookstore-znt4.onrender.com/api/v1/get-book-by-id/${id}`
         );
         setData(response.data.data);
       } catch (error) {
@@ -40,7 +40,7 @@ const ViewBookDetails = () => {
 
   const handleFavourite = async () => {
     const response = await axios.put(
-      "http://localhost:1000/api/v1/add-book-to-favourite",
+      "https://bookstore-znt4.onrender.com/api/v1/add-book-to-favourite",
       {},
       { headers }
     );
@@ -49,7 +49,7 @@ const ViewBookDetails = () => {
 
   const handleCart = async () => {
     const response = await axios.put(
-      "http://localhost:1000/api/v1/add-to-cart",
+      "https://bookstore-znt4.onrender.com/api/v1/add-to-cart",
       {},
       { headers }
     );
@@ -58,7 +58,7 @@ const ViewBookDetails = () => {
 
   const deleteBook = async () => {
     const response = await axios.delete(
-      "http://localhost:1000/api/v1/delete-book",
+      "https://bookstore-znt4.onrender.com/api/v1/delete-book",
       { headers }
     );
     alert(response.data.message);

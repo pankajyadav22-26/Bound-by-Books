@@ -21,7 +21,7 @@ const Cart = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "http://localhost:1000/api/v1/get-user-cart",
+        "https://bookstore-znt4.onrender.com/api/v1/get-user-cart",
         { headers }
       );
       setCart(response.data.data);
@@ -31,7 +31,7 @@ const Cart = () => {
 
   const deleteItem = async (bookid) => {
     const response = await axios.put(
-      `http://localhost:1000/api/v1/remove-from-cart/${bookid}`,
+      `https://bookstore-znt4.onrender.com/api/v1/remove-from-cart/${bookid}`,
       {},
       { headers }
     );
@@ -55,7 +55,7 @@ const Cart = () => {
       sessionStorage.setItem("id", localStorage.getItem("id"));
 
       const session = await axios.post(
-        "http://localhost:1000/api/v1/create-checkout-session",
+        "https://bookstore-znt4.onrender.com/api/v1/create-checkout-session",
         { cart: Cart },
         { headers }
       );
@@ -75,7 +75,7 @@ const Cart = () => {
   const handleCOD = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:1000/api/v1/place-order",
+        "https://bookstore-znt4.onrender.com/api/v1/place-order",
         { order: Cart, paymentMode: "COD" },
         { headers }
       );
