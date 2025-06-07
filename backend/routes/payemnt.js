@@ -23,8 +23,8 @@ router.post("/create-checkout-session", async (req, res) => {
             payment_method_types: ["card"],
             line_items,
             mode: "payment",
-            success_url: "http://localhost:5173/order-success",
-            cancel_url: "http://localhost:5173/cart",
+            success_url: "https://boundbybooks29.netlify.app/order-success",
+            cancel_url: "https://boundbybooks29.netlify.app/cart",
         });
 
         res.status(200).json({ id: session.id });
