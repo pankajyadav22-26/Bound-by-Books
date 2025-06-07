@@ -8,19 +8,23 @@ const User = require("../models/user");
 router.post("/place-order", authenticateToken, async (req, res) => {
     try {
         const { id } = req.headers;
-        const { order } = req.body;
+        const { order, paymentMode } = req.body;
+
         for (const orderData of order) {
-            const newOrder = new Order({ user: id, book: orderData._id });
+            const newOrder = new Order({
+                user: id,
+                book: orderData._id,
+                paymentMode,
+            });
+
             const orderDataFromDb = await newOrder.save();
 
             await User.findByIdAndUpdate(id, {
                 $push: { orders: orderDataFromDb._id },
-            });
-
-            await User.findByIdAndUpdate(id, {
                 $pull: { cart: orderData._id },
             });
         }
+
         return res.json({
             status: "Success",
             message: "Order placed Successfully",

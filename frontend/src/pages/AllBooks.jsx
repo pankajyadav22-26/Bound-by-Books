@@ -9,7 +9,7 @@ const AllBooks = () => {
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "https://bookstore-znt4.onrender.com/api/v1/get-all-books"
+        "http://localhost:1000/api/v1/get-all-books"
       );
       setData(response.data.data);
     };

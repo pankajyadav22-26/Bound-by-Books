@@ -9,10 +9,11 @@ const UserOrderHistory = () => {
     id: localStorage.getItem("id"),
     authorization: `Bearer ${localStorage.getItem("token")}`,
   };
+  console.log(OrderHistory);
   useEffect(() => {
     const fetch = async () => {
       const response = await axios.get(
-        "https://bookstore-znt4.onrender.com/api/v1/get-order-history",
+        "http://localhost:1000/api/v1/get-order-history",
         { headers }
       );
       setOrderHistory(response.data.data);
@@ -97,7 +98,7 @@ const UserOrderHistory = () => {
                   </h1>
                 </div>
                 <div className="w-none md:w-[5%] hidden md:block">
-                  <h1 className="text-sm text-zinc-400">COD</h1>
+                  <h1 className="text-sm text-zinc-400">{item.paymentMode}</h1>
                 </div>
               </div>
             ))}

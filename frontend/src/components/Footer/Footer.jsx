@@ -1,150 +1,136 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaBookOpen,
+  FaUserPlus,
+  FaMapMarkerAlt,
+  FaHome,
+  FaInfoCircle,
+  FaSignInAlt,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoDiscord } from "react-icons/io5";
-import { FaTelegramPlane } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-800 text-white px-6 py-6 flex flex-col md:flex-row justify-between items-center">
-      <div className="mb-4 md:mb-0 flex flex-col items-center">
-        <img
-          src="/logo.png"
-          alt="BookStore"
-          className="h-12 transform transition-transform duration-500 hover:rotate-12"
-        />
-        <h1 className="ml-2 text-xl text-orange-300">BookStore</h1>
-      </div>
-      <div className="flex flex-col md:flex-row md:space-x-6 mb-4 md:mb-0">
-        <div className="flex flex-col items-center md:items-start">
-          <a
-            href="/"
-            className="mx-2 my-1 hover:underline hover:text-blue-500 p-1"
-          >
-            Home
-          </a>
-          <a
-            href="/about-us"
-            className="mx-2 my-1 hover:underline hover:text-blue-500 p-1"
-          >
-            About Us
-          </a>
-          <a
-            href="/all-books"
-            className="mx-2 my-1 hover:underline hover:text-blue-500 p-1"
-          >
-            All Books
-          </a>
+    <footer className="bg-zinc-800 text-white sm:px-6 md:px-0 pt-3 pb-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 text-center lg:text-left">
+        <div className="flex flex-col items-center text-center">
+          <img
+            src="/logo.png"
+            alt="BookStore"
+            className="h-12 w-auto mb-2 transform transition-transform duration-500 hover:rotate-12"
+          />
+          <h1 className="text-xl sm:text-2xl font-semibold">Bound By Books</h1>
         </div>
-        <div className="flex flex-col items-center md:items-start">
-          <a
-            href="/signup"
-            className="mx-2 my-1 hover:underline hover:text-blue-500 p-1"
-          >
-            Sign Up
-          </a>
-          <a
-            href="/login"
-            className="mx-2 my-1 hover:underline hover:text-blue-500 p-1"
-          >
-            Log In
-          </a>
-          <a
-            href="https://maps.app.goo.gl/fF9Jo2t1ArGikeR27"
-            className="mx-2 my-1 hover:underline hover:text-blue-500 p-1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Locate Store
-          </a>
+
+        {/* Explore Links */}
+        <div>
+          <h2 className="text-lg font-semibold mb-2">Explore</h2>
+          <nav className="flex flex-col items-center lg:items-start space-y-1">
+            <a
+              href="/"
+              className="flex items-center hover:underline hover:text-blue-500"
+            >
+              <FaHome className="mr-2" /> Home
+            </a>
+            <a
+              href="/about-us"
+              className="flex items-center hover:underline hover:text-blue-500"
+            >
+              <FaInfoCircle className="mr-2" /> About Us
+            </a>
+            <a
+              href="/all-books"
+              className="flex items-center hover:underline hover:text-blue-500"
+            >
+              <FaBookOpen className="mr-2" /> All Books
+            </a>
+          </nav>
         </div>
-        <div className="flex flex-col items-center md:items-start">
-          <div className="flex items-center">
+
+        {/* Account Links */}
+        <div>
+          <h2 className="text-lg font-semibold mb-2">Account</h2>
+          <nav className="flex flex-col items-center lg:items-start space-y-1">
+            <a
+              href="/signup"
+              className="flex items-center hover:underline hover:text-blue-500"
+            >
+              <FaUserPlus className="mr-2" /> Sign Up
+            </a>
+            <a
+              href="/LogIn"
+              className="flex items-center hover:underline hover:text-blue-500"
+            >
+              <FaSignInAlt className="mr-2" /> Log In
+            </a>
+            <a
+              href="https://maps.app.goo.gl/fF9Jo2t1ArGikeR27"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center hover:underline hover:text-blue-500"
+            >
+              <FaMapMarkerAlt className="mr-2" /> Locate Store
+            </a>
+          </nav>
+        </div>
+
+        {/* Social Media Links */}
+        <div>
+          <h2 className="text-lg font-semibold mb-2">Follow Us</h2>
+          <nav className="flex flex-col items-center lg:items-start space-y-2">
             <a
               href="https://www.facebook.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center mx-2 my-2 hover:underline hover:text-blue-500"
+              className="flex items-center hover:text-blue-500"
             >
-              <FaFacebook className="mx-2" />
-              <span>Facebook</span>
+              <FaFacebook className="mr-2" /> Facebook
             </a>
-          </div>
-          <div className="flex items-center">
             <a
               href="https://www.twitter.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center mx-2 my-2 hover:underline hover:text-blue-500"
+              className="flex items-center hover:text-blue-500"
             >
-              <FaXTwitter className="mx-2" />
-              <span>Twitter</span>
+              <FaXTwitter className="mr-2" /> Twitter
             </a>
-          </div>
-          <div className="flex items-center">
             <a
               href="https://www.instagram.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center mx-2 my-2 hover:underline hover:text-blue-500"
+              className="flex items-center hover:text-blue-500"
             >
-              <FaInstagram className="mx-2" />
-              <span>Instagram</span>
+              <FaInstagram className="mr-2" /> Instagram
             </a>
-          </div>
+          </nav>
         </div>
-        <div className="flex flex-col items-center md:items-start">
-          <div className="flex items-center">
+
+        {/* Contact Info */}
+        <div>
+          <h2 className="text-lg font-semibold mb-2 underline">Contact Us</h2>
+          <address className="not-italic text-sm text-center lg:text-left">
+            Bound By Books
+            <br />
+            Dwarka Sector - 29
+            <br />
+            New Delhi, 110079
+            <br />
+            Email:{" "}
             <a
-              href="https://www.linkedin.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center mx-2 my-2 hover:underline hover:text-blue-500"
+              href="mailto:bookstore@gmail.com"
+              className="hover:text-blue-500"
             >
-              <FaLinkedin className="mx-2" />
-              <span>LinkedIn</span>
+              bookstore@gmail.com
             </a>
-          </div>
-          <div className="flex items-center">
-            <a
-              href="https://discord.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center mx-2 my-2 hover:underline hover:text-blue-500"
-            >
-              <IoLogoDiscord className="mx-2" />
-              <span>Discord</span>
-            </a>
-          </div>
-          <div className="flex items-center">
-            <a
-              href="https://telegram.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center mx-2 my-2 hover:underline hover:text-blue-500"
-            >
-              <FaTelegramPlane className="mx-2" />
-              <span>Telegram</span>
-            </a>
-          </div>
+          </address>
         </div>
       </div>
-      <div className="text-center md:text-left">
-        <h1 className="text-blue-300">
-          <u>Contact Us</u> :
-        </h1>
-        <div className="mt-1">
-          BookStore
-          <br />
-          Address: Dwarka Sector - 29
-          <br />
-          New Delhi, 110079
-          <br />
-          Email:{" "}
-          <a href="mailto:bookstore@gmail.com" className="hover:text-blue-500">
-            bookstore@gmail.com
-          </a>
-        </div>
+
+      {/* Bottom Footer */}
+      <div className="mt-10 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
+        © {new Date().getFullYear()} Bound By Books. All rights reserved.
       </div>
     </footer>
   );

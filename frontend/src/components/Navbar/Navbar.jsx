@@ -47,7 +47,8 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="z-50 relative flex items-center justify-between bg-zinc-800 text-white px-8 py-4 shadow-lg">
+      <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between bg-zinc-800 text-white px-8 py-4 shadow-lg">
+        {" "}
         <Link to="/" className="flex items-center">
           <img
             className="h-10 me-4 transform transition-transform duration-500 hover:rotate-12"
@@ -55,7 +56,7 @@ const Navbar = () => {
             alt="logo"
           />
           <h1 className="text-2xl font-semibold tracking-wide hover:text-blue-500 transition-all duration-300">
-            BookStore
+            Bound By Books
           </h1>
         </Link>
         <div className="nav-links-bookstore block md:flex items-center gap-8">

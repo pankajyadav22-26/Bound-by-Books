@@ -25,7 +25,7 @@ const SignUp = () => {
         alert("All fields are required");
       } else {
         const response = await axios.post(
-          "https://bookstore-znt4.onrender.com/api/v1/signup",
+          "http://localhost:1000/api/v1/signup",
           Values
         );
         alert(response.data.message);
