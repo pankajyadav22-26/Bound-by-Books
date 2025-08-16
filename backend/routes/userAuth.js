@@ -1,8 +1,10 @@
 const jwt = require("jsonwebtoken");
 
 const authenticateToken = (req, res, next) => {
+    console.log("Authenticating user...");
     const serviceToken = req.headers["x-api-key"];
     if (serviceToken && serviceToken === process.env.SERVICE_TOKEN) {
+        console.log("Service token provided, skipping authentication");
         return next();
     }
 
