@@ -10,14 +10,14 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # frontend URL
+    allow_origins=["https://bookstore2943.netlify.app"],  # frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # Load env vars
-BACKEND_URL = os.getenv("BACKEND_BASE_URL", "http://localhost:1000/api/v1")
+BACKEND_URL = os.getenv("BACKEND_BASE_URL")
 AUTHOR_WEIGHT = float(os.getenv("AUTHOR_WEIGHT", 1.0))
 LANGUAGE_WEIGHT = float(os.getenv("LANGUAGE_WEIGHT", 1.0))
 SERVICE_TOKEN = os.getenv("SERVICE_TOKEN", "pankaj123456")

@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const authenticateToken = (req, res, next) => {
     const serviceToken = req.headers["x-api-key"];
     if (serviceToken && serviceToken === process.env.SERVICE_TOKEN) {
-        return next();
+        return next();  
     }
 
     const authHeader = req.headers["authorization"];

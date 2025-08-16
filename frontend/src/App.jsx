@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authActions } from "./store/auth";
@@ -20,6 +20,7 @@ import AllOrders from "./pages/AllOrders";
 import AddBook from "./pages/AddBook";
 import UpdateBook from "./pages/UpdateBook";
 import OrderSuccess from "./pages/OrderSuccess";
+import RecommendBooks from "./pages/RecommendBooks";
 
 const PrivateRoute = ({ children }) => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -59,6 +60,15 @@ const App = () => {
           element={isLoggedIn ? <Navigate to="/profile" replace /> : <SignUp />}
         />
         <Route path="/view-book-details/:id" element={<ViewBookDetails />} />
+
+         <Route
+          path="/recommendBooks"
+          element={
+            <PrivateRoute>
+              <RecommendBooks />
+            </PrivateRoute>
+          }
+        />
 
         <Route
           path="/cart"
