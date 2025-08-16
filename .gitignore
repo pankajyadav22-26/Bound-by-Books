@@ -3,3 +3,6 @@
 /frontend/.env
 /frontend/node_modules
 /frontend/.gitignore
+/models/.env
+/models/__pycache__/
+/models/.venv
